@@ -26,7 +26,7 @@ Under the hood, the script:
 ├─ data/
 │  ├─ example_dataset_1/        # used in README
 │  └─ example_dataset_2/
-└─ image/
+└─ images/
    ├─ procedure.png             # workflow: align → stack → map expression
    └─ visualization.png         # colored gene expression overlaid in 3D
 ```
