@@ -46,7 +46,7 @@ pip install napari[all] magicgui qtpy numpy pandas scikit-image matplotlib
 ```
 3. Run the viewer
 ```bash
-python code/napari_gene_expression_plugin_v1.py
+python code/napari_gene_expression_plugin.py
 ```
 
 ## 🚀 Quick Start (with the included example)
