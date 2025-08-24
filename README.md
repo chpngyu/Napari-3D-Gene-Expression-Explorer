@@ -21,7 +21,7 @@ Under the hood, the script:
 ```arduino
 .
 ├─ code/
-│  └─ napari_gene_expression_plugin_v1.py
+│  └─ napari_gene_expression_plugin.py
 ├─ data/
 │  ├─ example_dataset_1/        # used in README
 │  └─ example_dataset_2/
