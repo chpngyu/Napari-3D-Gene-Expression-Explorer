@@ -6,11 +6,10 @@
 ## ✨ What this plugin does
 
 We ship a minimal, easy-to-run Napari project (plugin + example dataset) so readers can reproduce and interactively explore reconstructed 3D volumes:
-
-(a) Load pre-aligned histological cross-sections from 2D PNG slices
-(b) Stack & reconstruct the slices into a 3D volume
-(c) Map gene expression values onto spot/region coordinates
-(d) Save/restore Napari layers for flexible visualization and follow-up analysis
+  (a) Load pre-aligned histological cross-sections from 2D PNG slices.
+  (b) Stack & reconstruct the slices into a 3D volume.
+  (c) Map gene expression values onto spot/region coordinates.
+  (d) Save/restore Napari layers for flexible visualization and follow-up analysis.
 
 Under the hood, the script:
  - auto-discovers images named like region_<id>.png and stacks them by ascending <id>
