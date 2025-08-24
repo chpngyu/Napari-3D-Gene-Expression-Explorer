@@ -98,6 +98,7 @@ Issues and pull requests are welcome! Please:
 
 ## 📚 Cite this project
 If you use this plugin in a paper or talk, please cite:
+
 `Serial Spatial Transcriptomes Reveal Regulatory Transitions in Maize Leaf Development
 Chi-Chih Wu, Ludvig Larsson, Chun-Ping Yu, Kun-Ting Hsieh, Yi-Hua Chen, Kai-Hsuan Ding, Ho-Chun Yang, Joakim Lundeberg, Chin-Min Kimmy Ho, Shu-Hsing Wu, Mei-Yeh Jade Lu, Wen-Hsiung Li.`
 
