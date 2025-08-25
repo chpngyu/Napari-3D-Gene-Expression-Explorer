@@ -23,8 +23,8 @@ Under the hood, the script:
 ├─ code/
 │  └─ napari_gene_expression_plugin.py
 ├─ data/
-│  ├─ example_dataset_1/        # used in README
-│  └─ example_dataset_2/
+│  ├─ VR03/        # used in README
+│  └─ DQ02/
 └─ images/
    ├─ procedure.png             # workflow: align → stack → map expression
    └─ visualization.png         # colored gene expression overlaid in 3D
@@ -53,8 +53,10 @@ python code/napari_gene_expression_plugin.py
 
 1. Images: put aligned PNG slices in a folder, named region_<integer>.png
   - e.g., region_1.png, region_2.png, … (these define z-order)
+  - - Sample folder: data/VR03/masked_region/
 2. Spots: CSV with columns:
   - region_id (matches <integer> in the PNG name), spot_id, pixel_x, pixel_y
+  - Example file: alignment_parameters.csv located in data/VR03/
 3. Expression: *.csv.gz where rows = genes, columns = spot IDs (matching spot_id above).
   - In Napari:
     - Click “Load & Show”, select:
@@ -64,6 +66,7 @@ python code/napari_gene_expression_plugin.py
     - Z-Spacing → set voxel depth scaling (e.g., 35)
     - Type a Gene Name and click “Display Gene Expression” → A Gene Expression points layer is added/updated and colored by expression (JEt colormap).
     - The stacked images appear as a 3D volume; rotate, zoom, and slice as needed.
+    - Example file: expr_matrix.csv.gz in data/VR03/
 
 ## 🖼️ Examples
 Workflow Overview: Pre-Aligned Histological Cross-Sections from 2D Images
