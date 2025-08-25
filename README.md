@@ -90,7 +90,7 @@ Interactive 3D visualization of spatial gene expression in embryonic leaves usin
  - Z-spacing: applied via scale=(z_spacing, 1, 1) so distances look proportional along z.
 
 ## 🧪 Reproducibility notes
- - Use the included data/example_dataset_1 to replicate the screenshots above.
+ - Use the included data/VR03 to replicate the screenshots above.
  - Ensure image filenames and region_id are consistent (e.g., region_5.png ↔ region_id = 5).
  - Spot IDs must match columns in the expression matrix. Any mismatch will simply skip those points.
 
