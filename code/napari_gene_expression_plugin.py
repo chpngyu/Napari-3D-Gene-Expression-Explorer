@@ -9,20 +9,14 @@ from magicgui.widgets import LineEdit, PushButton
 import matplotlib.pyplot as plt
 from skimage.exposure import rescale_intensity
 
+image_color = 'I Blue' # 'I Orange'
+
 def load_color_images(image_dir):
     image_layers = {}
     for fname in os.listdir(image_dir):
         if fname.endswith('.png') and fname.startswith("region_"):
             region_id = os.path.splitext(fname)[0].split('_')[1]
             image = imread(os.path.join(image_dir, fname))  # Keep original color
-            
-            # Optional: enhance brightness/contrast
-            '''
-            image = rescale_intensity(image, out_range=(0, 1))
-            tint = np.array([0.5, 0.8, 0.0])  # light blue tint
-            tinted = (image * tint).clip(0, 1)
-            image = (tinted * 255).astype(np.uint8)
-            '''
             image_layers[region_id] = image
     return image_layers
 
@@ -31,7 +25,7 @@ def stack_images_by_region(image_layers):
     stack = np.stack([image_layers[k] for k in sorted_keys], axis=0)
     return stack, sorted_keys
 
-def map_expression_to_points(spots_df, expr_df, gene, region_ids, max_value=10):
+def map_expression_to_points(spots_df, expr_df, gene, region_ids, min_value=1, max_value=30):
     spot_coords = []
     spot_colors = []
 
@@ -42,12 +36,34 @@ def map_expression_to_points(spots_df, expr_df, gene, region_ids, max_value=10):
         z_index = region_ids.index(region)
         x, y = row['pixel_x'], row['pixel_y']
         value = expr_df.at[gene, row['spot_id']] if gene in expr_df.index else 0.0
+        if value < min_value:
+            continue
         spot_coords.append([z_index, y, x])
-        spot_colors.append(min(value, max_value)/max_value)
+        spot_colors.append(min(value, max_value))
+        #spot_colors.append(min(value, max_value)/max_value)
 
     coords = np.array(spot_coords)
     values = np.array(spot_colors, dtype=np.float32)
     return coords, values
+
+def log_normalize(values):
+    values = np.array(values)
+    if np.any(values <= 0):
+        raise ValueError("All values must be positive for log transformation.")
+    
+    # Apply log transformation
+    log_values = np.log(values)
+    
+    # Normalize to range [0, 1]
+    min_log = np.min(log_values)
+    max_log = np.max(log_values)
+    
+    # Avoid division by zero if all log_values are the same
+    if max_log == min_log:
+        return np.zeros_like(log_values)
+    
+    normalized = (log_values - min_log) / (max_log - min_log)
+    return normalized
 
 
 if __name__ == '__main__':
@@ -68,7 +84,7 @@ if __name__ == '__main__':
         image_layers = load_color_images(image_dir)
         stack, region_ids = stack_images_by_region(image_layers)
         viewer.add_image(stack, name="Color Z-Stack", opacity=0.5, scale=(z_spacing, 1, 1),
-            colormap = 'I Orange', blending= 'minimum')  # Keep RGB, no grayscale colormap
+            colormap = image_color, blending= 'minimum')  # Keep RGB, no grayscale colormap
 
         spots_df = pd.read_csv(spot_file)
         expr_df = pd.read_csv(expr_file, index_col=0, compression='gzip')  # Read .csv.gz
@@ -93,12 +109,12 @@ if __name__ == '__main__':
             else:
                 print('Adding Gene Expression layer')
                 cmap = plt.get_cmap('jet') # plasma
-                colors_array = cmap(values)
+                colors_array = cmap(log_normalize(values))
                 layer = viewer.add_points(coords, name='Gene Expression', size=15,
                                   face_color=colors_array, border_width=0,
-                                  opacity=0.2, scale=(z_spacing, 1, 1),
+                                  opacity=0.3, scale=(z_spacing, 1, 1),
                                   out_of_slice_display=True) # remove features={'expression': values}
-                layer.edge_width = 0
+                #layer.edge_width = 0
         gene_button.changed.connect(update_gene_expression)
         
         # Add to Napari as a docked widget
