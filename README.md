@@ -30,7 +30,7 @@ Under the hood, the script:
    └─ visualization.png         # colored gene expression overlaid in 3D
 ```
 
-More processed datasets for Napari interactive viewer were deposited in the Zenodo (https://zenodo.org/records/16933147?preview=1&token=eyJhbGciOiJIUzUxMiIsImlhdCI6MTc1NTk1OTEyNCwiZXhwIjoxNzY5ODE3NTk5fQ.eyJpZCI6IjlkOGJmOTQ4LWI5MDgtNDY0Ny1iYTY0LWZlNDRhM2JiMGEzNSIsImRhdGEiOnt9LCJyYW5kb20iOiJmZmUwOWQyOGNlZDQzNWZmMzQ2YjZhZDBlY2IzYmUwMCJ9.Si4_M_0Vr6P9ugToKXbx9M8t8kkSCEwZFVE3h6uCedJDzc2H34RQKsihG0JopGcYH2e5ptmOgPA6qb3iMiFAJQ)
+More processed datasets for Napari interactive viewer were deposited in the Zenodo (https://zenodo.org/records/16933147)
 
 ## ⚙️ Installation (direct run)
 We provide a direct command-line approach (no packaging needed).
