@@ -74,7 +74,7 @@ Workflow Overview: Pre-Aligned Histological Cross-Sections from 2D Images
 
 3D Visualization With Gene Overlay
 ![visualization](images/visualization.png)
-Stacking and reconstruction of these aligned sections into 3D volumes
+Interactive 3D visualization of spatial gene expression in embryonic leaves using Napari. (A) Four aligned embryonic leaf images are stacked and rendered in blue within a 3D interface. Spatial expression of the gene Zm00001eb202200 is visualized using a color map, where blue indicates lower expression and red indicates higher expression. Regions with read counts greater than zero are highlighted. (B) The 3D visualization is rotated to display multiple viewing angles, facilitating spatial interpretation of gene expression across leaf structures.
 
 ## Viewer behavior & controls
  - 3D by default: viewer.dims.ndisplay = 3
