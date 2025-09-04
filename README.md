@@ -11,6 +11,8 @@ We ship a minimal, easy-to-run Napari project (plugin + example dataset) so read
   (c) Map gene expression values onto spot/region coordinates.
   (d) Save/restore Napari layers for flexible visualization and follow-up analysis.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Under the hood, the script:
  - auto-discovers images named like region_<id>.png and stacks them by ascending <id>
  - expects a spots CSV with columns: region_id, spot_id, pixel_x, pixel_y
@@ -71,9 +73,9 @@ python code/napari_gene_expression_plugin.py
 ## 🖼️ Examples
 Workflow Overview: Pre-Aligned Histological Cross-Sections from 2D Images
 ![procedure](images/procedure.png)
-(A) Start with a histological 2D image.
-(B) Detect and extract relevant cross-sections within the image.
-(C) Align the extracted cross-sections to corresponding tissue types using color-coded references.
+(A) Initial histological 2D image.
+(B) Detection and extraction of four relevant cross-sections, labeled 1 through 4.
+(C) Alignment of the extracted sections with corresponding tissue types, guided by color-coded references. The four sections are arranged vertically from top to bottom.
 
 3D Visualization With Gene Overlay
 ![visualization](images/visualization.png)
@@ -107,7 +109,7 @@ If you use this plugin in a paper or talk, please cite:
 Chi-Chih Wu, Ludvig Larsson, Chun-Ping Yu, Kun-Ting Hsieh, Yi-Hua Chen, Kai-Hsuan Ding, Ho-Chun Yang, Joakim Lundeberg, Chin-Min Kimmy Ho, Shu-Hsing Wu, Mei-Yeh Jade Lu, Wen-Hsiung Li.`
 
 ## 📄 License
-MIT (recommended). Add your chosen license text in LICENSE.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
   - Built with Napari, magicgui, scikit-image, matplotlib, NumPy, Pandas, and Qt.
