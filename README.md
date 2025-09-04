@@ -74,7 +74,7 @@ Workflow Overview: Pre-Aligned Histological Cross-Sections from 2D Images
 ![procedure](images/procedure.png)
 (A) Initial histological 2D image.
 (B) Detection and extraction of four relevant cross-sections, labeled 1 through 4.
-(C) Alignment of the extracted sections with corresponding tissue types, guided by color-coded references. The four sections are arranged vertically from top to bottom.
+(C) Alignment of the extracted sections with corresponding tissue types (1 to 4). The four sections are arranged vertically from top to bottom.
 
 3D Visualization With Gene Overlay
 ![visualization](images/visualization.png)
