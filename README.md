@@ -11,7 +11,6 @@ We ship a minimal, easy-to-run Napari project (plugin + example dataset) so read
   (c) Map gene expression values onto spot/region coordinates.
   (d) Save/restore Napari layers for flexible visualization and follow-up analysis.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Under the hood, the script:
  - auto-discovers images named like region_<id>.png and stacks them by ascending <id>
@@ -108,8 +107,6 @@ If you use this plugin in a paper or talk, please cite:
 `Serial Spatial Transcriptomes Reveal Regulatory Transitions in Maize Leaf Development
 Chi-Chih Wu, Ludvig Larsson, Chun-Ping Yu, Kun-Ting Hsieh, Yi-Hua Chen, Kai-Hsuan Ding, Ho-Chun Yang, Joakim Lundeberg, Chin-Min Kimmy Ho, Shu-Hsing Wu, Mei-Yeh Jade Lu, Wen-Hsiung Li.`
 
-## 📄 License
-This project is licensed under the MIT License.
 
 ## 🙏 Acknowledgments
   - Built with Napari, magicgui, scikit-image, matplotlib, NumPy, Pandas, and Qt.
